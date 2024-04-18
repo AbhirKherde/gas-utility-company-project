@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        label,
+input[type="text"],
+input[type="email"] {
+    text-align: left; /* Align labels and input fields to the left */
+}
+        
+        form {
+            max-width: 600px;
+            margin: 0 auto; /* Center the form horizontally */
+    text-align: center;
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 25px; /* Increased padding for larger button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px; /* Increase font size for larger button */
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Submit Request</h1>
+    <form method="post" action=/trackreq>
+        {% csrf_token %}
+        <label for="customer_name">Customer Name:</label>
+        <input type="text" id="customer_name" name="customer_name"><br>
+        <label for="exampleFormControlInput1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+            />
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

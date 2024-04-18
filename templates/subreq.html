@@ -1,0 +1,148 @@
+<!-- templates/home/service_request_submission.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Request Submission</title>
+    <!-- ##########################################################################################-->
+    <style>
+      /* CSS for Blueflame Gas Company website */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 30px 0;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      main {
+        padding: 20px 0;
+      }
+
+      form {
+        background-color: #f9f9f9; /* Light grey */
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      button {
+        background-color: #007bff; /* Blue color */
+        color: #fff; /* White text */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3; /* Darker blue color */
+      }
+    </style>
+    <!-- ##########################################################################################-->
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>BLUEFLAME GAS COMPANY</h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h2>Submit a Service Request</h2>
+        <form method="POST" action="/subreq">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" />
+            <br />
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" />
+            <br />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="id_service_type">Service Type:</label>
+            <select
+              name="service_type"
+              id="id_service_type"
+              class="form-control"
+            >
+              <option value="gas_leak_detection">Gas Leak Detection</option>
+              <option value="meter_installation">Meter Installation</option>
+              <option value="meter_installation">
+                Gas Appliance Installation
+              </option>
+              <option value="meter_installation">Gas Line Maintenance</option>
+              <option value="meter_installation">Gas System Repairs</option>
+              <option value="meter_installation">Safety Education</option>
+              <option value="meter_installation">Gas Line Inspections</option>
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="id_details">Details:</label>
+            <textarea
+              name="details"
+              id="id_details"
+              class="form-control"
+              rows="5"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

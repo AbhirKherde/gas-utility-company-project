@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> {% block title %}{% endblock title %} Home Page</title>
+    <link rel="stylesheet" href="templates/css/styles.css" />
+    <!-- ##########################################################################################-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Global Styles */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: auto;
+        padding: 0 20px;
+      }
+
+      header,
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+      }
+
+      header h1,
+      footer p {
+        text-align: center;
+      }
+
+      main {
+        padding: 20px 0;
+      }
+
+      .hero {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .hero h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+      }
+
+      .options {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin: 10px;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+      
+      nav {
+        background-color: #333;
+      }
+      
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+      
+      nav ul li {
+        display: inline-block;
+      }
+      
+      nav ul li a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+      }
+      
+      nav ul li a:hover {
+        background-color: #555;
+      }
+      
+      
+    </style>
+    <!-- ##########################################################################################-->
+  </head>
+  <body>
+    <header> {% block header %}{% endblock header %}
+      <div class="container">
+        <h1>BLUEFLAME GAS COMPANY </h1>
+        <nav>
+          <ul>
+            <li><a href="/update_status">Update</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h2>Welcome to Blueflame Gas Company</h2>
+          <p>
+            We provide efficient and reliable gas utility services. Choose your
+            desired service below:
+          </p>
+        </div>
+      </section>
+      <section class="services">
+        <div class="container">
+          <div class="service-option">
+            <h3>Submit a Service Request</h3>
+            <p>
+              Need assistance with your gas service? Submit a service request
+              online.
+            </p>
+            <a class="btn" href="/subreq">Submit_Request</a>
+          </div>
+          <div class="service-option">
+            <h3>Track Service Request</h3>
+            <p>Already submitted a request? Track its status here.</p>
+            <a class="btn" href="/trackreq">Track_Request</a>
+          </div>
+          <div class="service-option">
+            <h3>View Account Information</h3>
+            <p>
+              Access your account details, billing history, and usage
+              information.
+            </p>
+            <a class="btn" href="/viewacc">View_Account</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer> {% block footer %}{% endblock footer %}
+      <div class="container">
+        <p>&copy; 2024 Gas Utility Services. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
